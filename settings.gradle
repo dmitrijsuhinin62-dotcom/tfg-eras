@@ -1,0 +1,18 @@
+pluginManagement {
+    repositories {
+        mavenCentral()
+        maven { url "https://maven.neoforged.net/" }
+        maven {
+            name 'ParchmentMc'
+            url 'https://maven.parchmentmc.org'
+        }
+        gradlePluginPortal()
+    }
+}
+
+plugins {
+    // Automatic toolchain provisioning
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '0.9.0'
+}
+
+rootProject.name = "${mod_name}"

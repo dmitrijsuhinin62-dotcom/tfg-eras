@@ -1,0 +1,31 @@
+### Java ###
+*.class
+hs_err_pid*
+
+### IntelliJ IDEA ###
+*.iml
+*.ipr
+*.iws
+.idea
+.idea_modules
+classes
+out
+
+### VS Code ###
+.vs
+.vscode
+
+### Windows / macOS ###
+thumbs.db
+.DS_Store
+
+### Gradle ###
+build
+.gradle
+
+### Minecraft runs ###
+run
+runs
+
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
