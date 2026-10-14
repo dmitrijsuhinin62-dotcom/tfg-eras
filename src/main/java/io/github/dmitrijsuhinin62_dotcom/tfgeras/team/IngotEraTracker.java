@@ -1,6 +1,5 @@
 package io.github.dmitrijsuhinin62_dotcom.tfgeras.team;
 
-import dev.ftb.mods.ftbteams.api.FTBTeamsAPI;
 import dev.ftb.mods.ftbteams.api.Team;
 import io.github.dmitrijsuhinin62_dotcom.tfgeras.Era;
 import java.util.EnumMap;
@@ -28,8 +27,7 @@ public final class IngotEraTracker {
             return;
         }
 
-        Team team = FTBTeamsAPI.api().getManager().getTeamForPlayer(player)
-                .orElseThrow(() -> new IllegalStateException("У игрока " + player.getGameProfile().getName() + " нет команды FTB Teams"));
+        Team team = TeamEras.teamOf(player);
 
         TeamEras.get(team).next()
                 .filter(next -> hasAnyIngot(player.getInventory(), next))

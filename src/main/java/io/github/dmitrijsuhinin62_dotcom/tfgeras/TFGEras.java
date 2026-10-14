@@ -1,5 +1,7 @@
 package io.github.dmitrijsuhinin62_dotcom.tfgeras;
 
+import io.github.dmitrijsuhinin62_dotcom.tfgeras.client.UnidentifiedTooltip;
+import io.github.dmitrijsuhinin62_dotcom.tfgeras.item.EquipmentLock;
 import io.github.dmitrijsuhinin62_dotcom.tfgeras.network.EraNetwork;
 import io.github.dmitrijsuhinin62_dotcom.tfgeras.team.IngotEraTracker;
 import io.github.dmitrijsuhinin62_dotcom.tfgeras.team.TeamEraEvents;
@@ -15,5 +17,7 @@ public final class TFGEras {
         EraNetwork.register();
         TeamEraEvents.register();
         MinecraftForge.EVENT_BUS.addListener(IngotEraTracker::onPlayerTick);
+        MinecraftForge.EVENT_BUS.addListener(EquipmentLock::onPlayerTick);
+        MinecraftForge.EVENT_BUS.addListener(UnidentifiedTooltip::onTooltip);
     }
 }

@@ -1,6 +1,7 @@
 package io.github.dmitrijsuhinin62_dotcom.tfgeras.team;
 
 import com.mojang.logging.LogUtils;
+import dev.ftb.mods.ftbteams.api.FTBTeamsAPI;
 import dev.ftb.mods.ftbteams.api.Team;
 import dev.latvian.mods.kubejs.stages.Stages;
 import io.github.dmitrijsuhinin62_dotcom.tfgeras.Era;
@@ -16,6 +17,11 @@ public final class TeamEras {
     private static final String ERA_KEY = TFGEras.MOD_ID + ":era";
 
     private TeamEras() {}
+
+    public static Team teamOf(ServerPlayer player) {
+        return FTBTeamsAPI.api().getManager().getTeamForPlayer(player)
+                .orElseThrow(() -> new IllegalStateException("У игрока " + player.getGameProfile().getName() + " нет команды FTB Teams"));
+    }
 
     public static Era get(Team team) {
         CompoundTag data = team.getExtraData();
