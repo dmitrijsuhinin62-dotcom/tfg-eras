@@ -1,4 +1,12 @@
 {
   "tfgeras.message.unidentified_item": "You don't understand how to use this",
-  "tfgeras.tooltip.unidentified_item": "Unidentified item"
+  "tfgeras.tooltip.unidentified_item": "Unidentified item",
+  "tfgeras.recipe.condition.era": "Requires era: %s",
+  "tfgeras.era.stone": "Stone Age",
+  "tfgeras.era.copper": "Copper Age",
+  "tfgeras.era.bronze": "Bronze Age",
+  "tfgeras.era.wrought_iron": "Iron Age",
+  "tfgeras.era.steel": "Steel Age",
+  "tfgeras.era.black_steel": "Black Steel Age",
+  "tfgeras.era.red_blue_steel": "Red & Blue Steel Age"
 }

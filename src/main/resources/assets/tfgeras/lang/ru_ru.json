@@ -1,4 +1,12 @@
 {
   "tfgeras.message.unidentified_item": "Ты не понимаешь, как этим пользоваться",
-  "tfgeras.tooltip.unidentified_item": "Неопознанный предмет"
+  "tfgeras.tooltip.unidentified_item": "Неопознанный предмет",
+  "tfgeras.recipe.condition.era": "Нужна эпоха: %s",
+  "tfgeras.era.stone": "Каменный век",
+  "tfgeras.era.copper": "Медный век",
+  "tfgeras.era.bronze": "Бронзовый век",
+  "tfgeras.era.wrought_iron": "Железный век",
+  "tfgeras.era.steel": "Стальной век",
+  "tfgeras.era.black_steel": "Век чёрной стали",
+  "tfgeras.era.red_blue_steel": "Век красной и синей стали"
 }

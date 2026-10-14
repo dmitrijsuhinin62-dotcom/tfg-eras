@@ -27,6 +27,10 @@ public enum Era {
         return name().toLowerCase(Locale.ROOT);
     }
 
+    public String translationKey() {
+        return TFGEras.MOD_ID + ".era." + id();
+    }
+
     public String stage() {
         return TFGEras.MOD_ID + ".era." + id();
     }
