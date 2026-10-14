@@ -39,10 +39,33 @@ repositories {
             includeGroup 'maven.modrinth'
         }
     }
+    maven {
+        name 'SpongePowered'
+        url 'https://repo.spongepowered.org/repository/maven-public/'
+        content {
+            includeGroup 'org.spongepowered'
+        }
+    }
+    maven {
+        name = 'GTCEu Maven'
+        url = 'https://maven.gtceu.com'
+        content {
+            includeGroup 'com.gregtechceu.gtceu'
+        }
+    }
+    maven { // LDLib
+        name = "FirstDarkDev Maven"
+        url = "https://maven.firstdarkdev.xyz/snapshots"
+        content {
+            includeGroup("com.lowdragmc.ldlib")
+        }
+    }
 }
 
 dependencies {
     compileOnly 'org.jetbrains:annotations:26.0.+'
+
+    annotationProcessor "org.spongepowered:mixin:${mixin_version}:processor"
 
     modImplementation "maven.modrinth:architectury-api:${architectury_version}"
 
@@ -57,6 +80,10 @@ dependencies {
     // EMI
     modImplementation "maven.modrinth:emi:${emi_version}"
 
+    // GTM
+    modImplementation("com.gregtechceu.gtceu:gtceu-${minecraft_version}:${gtm_version}") { transitive = false }
+    modImplementation("com.lowdragmc.ldlib:ldlib-forge-${minecraft_version}:${ldlib_version}") { transitive = false }
+
     testImplementation platform("org.junit:junit-bom:${junit_version}")
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
@@ -64,6 +91,12 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+mixin {
+    var refMap = add sourceSets.main, "${mod_id}.refmap.json"
+    jar.from refMap
+    config "${mod_id}.mixins.json"
 }
 
 legacyForge {
@@ -122,7 +155,8 @@ tasks.withType(Jar).configureEach {
             "Implementation-Title"    : "${mod_name}",
             "Implementation-Version"  : "${mod_version}",
             "Implementation-Vendor"   : "${mod_authors}",
-            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+            "MixinConfigs"            : "${mod_id}.mixins.json"
     ])
 }
 

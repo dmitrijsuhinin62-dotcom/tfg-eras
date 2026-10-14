@@ -33,6 +33,13 @@ ordering = "AFTER"
 side = "BOTH"
 
 [[dependencies."${mod_id}"]]
+modId = "gtceu"
+mandatory = true
+versionRange = "[7.5.3,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies."${mod_id}"]]
 modId = "emi"
 mandatory = true
 versionRange = "[1.1.24,)"
