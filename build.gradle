@@ -54,6 +54,9 @@ dependencies {
     modImplementation "maven.modrinth:rhino:${rhino_version}"
     modImplementation "maven.modrinth:kubejs:${kubejs_version}"
 
+    // EMI
+    modImplementation "maven.modrinth:emi:${emi_version}"
+
     testImplementation platform("org.junit:junit-bom:${junit_version}")
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'

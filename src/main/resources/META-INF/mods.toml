@@ -33,6 +33,13 @@ ordering = "AFTER"
 side = "BOTH"
 
 [[dependencies."${mod_id}"]]
+modId = "emi"
+mandatory = true
+versionRange = "[1.1.24,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies."${mod_id}"]]
 modId = "kubejs"
 mandatory = true
 versionRange = "[2001.6.5,)"
