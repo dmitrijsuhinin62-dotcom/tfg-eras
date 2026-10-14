@@ -4,7 +4,8 @@ import io.github.dmitrijsuhinin62_dotcom.tfgeras.Era;
 
 public final class ClientEra {
 
-    private static Era current = Era.STONE;
+    /** volatile: читается ещё и из рабочего потока перезагрузки EMI. */
+    private static volatile Era current = Era.STONE;
 
     private ClientEra() {}
 
@@ -12,7 +13,9 @@ public final class ClientEra {
         return current;
     }
 
-    public static void set(Era era) {
+    public static boolean set(Era era) {
+        boolean changed = current != era;
         current = era;
+        return changed;
     }
 }

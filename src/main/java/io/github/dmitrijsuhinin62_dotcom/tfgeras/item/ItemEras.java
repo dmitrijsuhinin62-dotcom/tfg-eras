@@ -28,10 +28,12 @@ public final class ItemEras {
         return Optional.empty();
     }
 
+    public static boolean isAbove(ItemStack stack, Era teamEra) {
+        return of(stack).filter(itemEra -> !teamEra.includes(itemEra)).isPresent();
+    }
+
     public static boolean isLocked(Player player, ItemStack stack, Era teamEra) {
-        return !player.isCreative()
-                && !player.isSpectator()
-                && of(stack).filter(itemEra -> !teamEra.includes(itemEra)).isPresent();
+        return !player.isCreative() && !player.isSpectator() && isAbove(stack, teamEra);
     }
 
     private static Map<Era, TagKey<Item>> createEraTags() {
